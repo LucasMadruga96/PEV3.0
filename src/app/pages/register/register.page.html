@@ -1,0 +1,167 @@
+<ion-header>
+
+
+  <style>
+    body{
+    background-image: url(../assets/icon/background.png);
+   /* Full height */
+   height: 90%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  }
+  
+  
+  #artes{
+    margin-top: 60%;
+  }
+  img{
+    width: 50%;
+   margin-left:10%; 
+  }
+    </style>
+    
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+  
+        <img src="assets/icon/logo.png"> 
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/home">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/sbn">Sobre Nós</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Serviços</a>
+          </li>
+        
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Contato</a>
+          </li>
+       
+          <li class="nav-item active">
+            <a class="nav-link" href="/cadastro">Cadastro</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/chat">Chat</a>
+          </li>
+       
+        </ul>
+     
+     
+      </div>
+    </nav>
+</ion-header>
+<ion-content padding class="login auth-page">
+
+  <div class="auth-content">
+    <!-- Logo -->
+    <div padding-horizontal text-center>
+      <div class="logo"></div>
+      <h3 no-margin>
+        <ion-text color="light" class="fw700">
+          <ion-text color="danger">Cadastro</ion-text>
+        </ion-text>
+      </h3>
+    </div>
+
+    <!-- Register form -->
+    <form [formGroup]="onRegisterForm" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+       Nome completo
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="fullName"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('fullName').touched && onRegisterForm.get('fullName').hasError('required')">
+        <ion-text color="warning">
+          Campo Obrigatório
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Email
+        </ion-label>
+        <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('email').touched && onRegisterForm.get('email').hasError('required')">
+        <ion-text color="warning">
+          Campo Obrigatório
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+        Senha
+        </ion-label>
+        <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="warning" class="text08" *ngIf="onRegisterForm.get('password').touched && onRegisterForm.get('password').hasError('required')">
+        <ion-text color="warning">
+          Campo Obrigatório
+        </ion-text>
+      </p>
+    </form>
+
+    <div margin-top>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="signUp()" [disabled]="!onRegisterForm.valid"
+        tappable>
+        <ion-icon name="log-in"></ion-icon>
+Cadastra-se
+      </ion-button>
+
+      <p text-center>
+        <ion-text color="light">
+      Ou cadastra-se com
+        </ion-text>
+      </p>
+
+      <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span (click)="goToLogin()" tappable>
+        <ion-text color="light">
+          <strong>EU TENHO UMA CONTA!</strong>
+        </ion-text>
+      </span>
+    </div>
+
+  </div>
+</ion-content>

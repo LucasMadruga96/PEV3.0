@@ -1,0 +1,96 @@
+<ion-header>
+  <style>
+    body{
+    background-image: url(../assets/icon/java.png);
+   /* Full height */
+   height: 90%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  }
+  h1{
+    text-align: center;
+  }
+  img{
+  width: 50%;
+ margin-left:10%; 
+}
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+
+}
+
+    </style>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+
+      <img src="assets/icon/logo.png"> 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/home">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Sobre Nós</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Serviços</a>
+        </li>
+      
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Contato</a>
+        </li>
+     
+        <li class="nav-item active">
+          <a class="nav-link" href="/cadastro">Cadastro</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/chat">Chat</a>
+        </li>
+     
+      </ul>
+    </div>
+  </nav>
+</ion-header>
+
+
+<ion-content>
+<body>
+
+  <div class="form-group shadow-textarea">
+
+    <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="DIGITE "></textarea>
+  </div>
+ 
+</body>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="java 2">
+      <ion-icon name="bookmarks"></ion-icon>
+      <ion-label>Java 2</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+
+    <ion-tab-button tab="map">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>Chat</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
+
+</ion-content>
