@@ -1,71 +1,85 @@
 <ion-header>
 
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" >
 
-  <style>
-    body{
-    background-image: url(../assets/icon/background.png);
-   /* Full height */
-   height: 90%; 
-  
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-  }
-  
-  
-  #artes{
-    margin-top: 60%;
-  }
-  img{
-    width: 50%;
-   margin-left:10%; 
-  }
-    </style>
-    
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-  
-        <img src="assets/icon/logo.png"> 
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/home">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/sbn">Sobre Nós</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Serviços</a>
-          </li>
-        
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Contato</a>
-          </li>
+      <img src="assets/icon/logo.png" > 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home" routerDirection="root">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+      
        
-          <li class="nav-item active">
-            <a class="nav-link" href="/cadastro">Cadastro</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/chat">Chat</a>
-          </li>
-       
-        </ul>
+      
+      
      
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/register" routerDirection="root">Cadastro</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link"routerLink="/login" routerDirection="root">Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/chat" routerDirection="root">Chat</a>
+        </li>
      
-      </div>
-    </nav>
+      </ul>
+   
+   
+    </div>
+  </nav>
+<style>
+h1{
+
+  font-weight: bold;
+  font-size: xx-large;
+
+}
+h3{
+color: white;
+font-weight: bolder;
+text-align: center;
+
+}
+h4{
+
+font-weight: bolder;
+text-align: center;
+font-size: xx-large;
+}
+body{
+  background-image: url(../assets/icon/background.png);
+ /* Full height */
+ height: 90%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+img{
+  width: 50%;
+ margin-left:10%; 
+}
+#botão{
+  margin-left:35%;
+
+ 
+}
+
+#link{
+text-align: center;
+  margin-top: 21%;
+}
+</style>
 </ion-header>
-
-
 <ion-content padding class="animated fadeIn login auth-page">
   <div class="theme-bg"></div>
   <div class="auth-content">
@@ -75,7 +89,7 @@
       <div class="logo"></div>
       <h4 no-margin>
         <ion-text color="light" class="fw700">
-        Login
+          Login
         </ion-text>
       </h4>
     </div>
@@ -91,14 +105,14 @@
       </ion-item>
       <p ion-text class="text08" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
         <ion-text color="warning">
-      Campo obrigatório
+        Campo obrigatório
         </ion-text>
       </p>
 
       <ion-item no-padding class="animated fadeInUp">
         <ion-label position="floating">
           <ion-icon name="lock" item-start></ion-icon>
-    Senha
+         Senha
         </ion-label>
         <ion-input color="secondary" type="password" formControlName="password"></ion-input>
       </ion-item>
@@ -118,42 +132,23 @@
     <div>
       <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="goToHome()" [disabled]="!onLoginForm.valid" tappable>
         <ion-icon name="log-in"></ion-icon>
-       Logar
+     Logar
       </ion-button>
 
       <p text-center>
         <ion-text color="light">
-        Ou logue com:
+         ou logue com:
         </ion-text>
       </p>
 
-      <ion-grid class="btn-group">
-        <ion-row>
-          <ion-col size="4">
-            <ion-button shape="round" expand="full" color="secondary">
-              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="4">
-            <ion-button shape="round" expand="full" color="secondary">
-              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="4">
-            <ion-button shape="round" expand="full" color="secondary">
-              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
+    
     </div>
 
     <!-- Other links -->
     <div text-center margin-top>
       <span (click)="goToRegister()" class="paz" tappable>
         <ion-text color="light">
-         Novo aqui? <strong>Cadastra-se</strong>
+         Novo aqui? <strong>Cadastra se</strong>
         </ion-text>
       </span>
     </div>

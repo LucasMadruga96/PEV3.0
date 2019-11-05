@@ -1,69 +1,69 @@
 <ion-header>
-
-
-  <style>
-    body{
-    background-image: url(../assets/icon/background.png);
-   /* Full height */
-   height: 90%; 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-  }
-  
-  
-  #artes{
-    margin-top: 60%;
-  }
-  img{
-    width: 50%;
-   margin-left:10%; 
-  }
-    </style>
     
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-  
-        <img src="assets/icon/logo.png"> 
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/home">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/sbn">Sobre Nós</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Serviços</a>
-          </li>
-        
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Contato</a>
-          </li>
+
+ <style>
+  body{
+  background-image: url(../assets/icon/background.png);
+ /* Full height */
+ height: 90%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+
+#artes{
+  margin-top: 60%;
+}
+img{
+  width: 50%;
+ margin-left:10%; 
+}
+.btn:hover {
+  background-color: RoyalBlue;
+}
+  </style>
+   <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" >
+
+      <img src="assets/icon/logo.png" > 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home" routerDirection="root">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+      
        
-          <li class="nav-item active">
-            <a class="nav-link" href="/cadastro">Cadastro</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/chat">Chat</a>
-          </li>
-       
-        </ul>
+      
+      
      
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/register" routerDirection="root">Cadastro</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link"routerLink="/login" routerDirection="root">Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/chat" routerDirection="root">Chat</a>
+        </li>
      
-      </div>
-    </nav>
+      </ul>
+   
+   
+    </div>
+  </nav>
+          
 </ion-header>
+
 <ion-content padding class="login auth-page">
 
   <div class="auth-content">
@@ -72,7 +72,7 @@
       <div class="logo"></div>
       <h3 no-margin>
         <ion-text color="light" class="fw700">
-          <ion-text color="danger">Cadastro</ion-text>
+          <ion-text color="secondary">Cadastro</ion-text>
         </ion-text>
       </h3>
     </div>
@@ -117,7 +117,30 @@
           Campo Obrigatório
         </ion-text>
       </p>
+   
+    <ion-list>
+        
+
+        <ion-radio-group allow-empty-selection>
+          <ion-list-header>
+            <ion-label>Você é?</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Professor</ion-label>
+            <ion-radio slot="end" color="primary"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Aluno</ion-label>
+            <ion-radio slot="end" color="secondary" checked></ion-radio>
+          </ion-item>
+
+         
+        </ion-radio-group>
+      </ion-list>
+   
     </form>
+
 
     <div margin-top>
       <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="signUp()" [disabled]="!onRegisterForm.valid"
@@ -132,25 +155,7 @@ Cadastra-se
         </ion-text>
       </p>
 
-      <ion-grid class="btn-group">
-        <ion-row>
-          <ion-col size="4">
-            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
-              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="4">
-            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
-              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="4">
-            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
-              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+    
 
     </div>
 

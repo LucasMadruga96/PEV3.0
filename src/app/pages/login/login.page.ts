@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, MenuController, ToastController, AlertController, LoadingController } from '@ionic/angular';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from  "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -9,14 +11,16 @@ import { NavController, MenuController, ToastController, AlertController, Loadin
 })
 export class LoginPage implements OnInit {
   public onLoginForm: FormGroup;
-
+  showError:  boolean  =  false;
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private  authService:  AuthService, 
+    private  router:  Router
   ) { }
 
   ionViewWillEnter() {
@@ -34,7 +38,17 @@ export class LoginPage implements OnInit {
       ])]
     });
   }
-
+  login(form){
+    this.authService.login(form.value).subscribe((res)=>{
+      if(res.status == 200){
+        this.showError = false;
+        this.router.navigateByUrl(`home/${res.user_id}`);
+      }
+      else{
+        this.showError = true;
+      }
+    });
+}
   async forgotPass() {
     const alert = await this.alertCtrl.create({
       header: 'Forgot Password?',

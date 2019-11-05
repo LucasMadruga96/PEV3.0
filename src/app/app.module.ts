@@ -14,10 +14,12 @@ import {YoutubeVideoPlayer} from '@ionic-native/youtube-video-player/ngx';
 import {MediaCapture} from '@ionic-native/media-capture/ngx';
 import { Media } from '@ionic-native/media/ngx';
 import {File} from '@ionic-native/file/ngx';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot( ), AppRoutingModule,IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot( ), AppRoutingModule,IonicStorageModule.forRoot(),HttpClientModule,FormsModule],
   providers: [
     StatusBar,
     SplashScreen,

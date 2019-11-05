@@ -7,13 +7,13 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
 
   { path: 'inicial', loadChildren: './pages/inicial/inicial.module#InicialPageModule' },
-  { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule' },
+ 
   { path: 'artes', loadChildren: './pages/artes/artes.module#ArtesPageModule' },
   { path: 'informatica', loadChildren: './pages/informatica/informatica.module#InformaticaPageModule' },
   { path: 'geografia', loadChildren: './pages/geografia/geografia.module#GeografiaPageModule' },
   { path: 'mat', loadChildren: './pages/mat/mat.module#MatPageModule' },
   { path: 'direito', loadChildren: './pages/direito/direito.module#DireitoPageModule' },
-  { path: 'biologia', loadChildren: './pages/biologia/biologia.module#BiologiaPageModule' },
+
  
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'java', loadChildren: './pages/informatica/java/java.module#JavaPageModule' },
@@ -21,12 +21,9 @@ const routes: Routes = [
   { path: 'espanhol', loadChildren: './pages/espanhol/espanhol.module#EspanholPageModule' },
   { path: 'vaj', loadChildren: './pages/informatica/java/vaj/vaj.module#VajPageModule' },
 
-  { path: 'podj', loadChildren: './pages/informatica/java/podj/podj.module#PodjPageModule' },
-  { path: 'poda', loadChildren: './pages/informatica/poda/poda.module#PodaPageModule' },
-  { path: 'podjsf', loadChildren: './pages/informatica/podjsf/podjsf.module#PodjsfPageModule' },
-  { path: 'podh', loadChildren: './pages/informatica/podh/podh.module#PodhPageModule' },
-  { path: 'podg', loadChildren: './pages/informatica/podg/podg.module#PodgPageModule' },
-  { path: 'podi', loadChildren: './pages/informatica/podi/podi.module#PodiPageModule' },
+
+
+
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
 
   {
@@ -95,7 +92,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: './pages/login/login.module#LoginPageModule'
+            loadChildren: () =>
+            import( './pages/login/login.module').then(m => m.LoginPageModule)
           },
         
         ]
@@ -107,10 +105,22 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'apoj', loadChildren: './pages/informatica/java/apoj/apoj.module#ApojPageModule' },
-  { path: 'sbn', loadChildren: './pages/sbn/sbn.module#SbnPageModule' },
+
+ 
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
-  { path: 'quizj', loadChildren: './pages/informatica/java/quizj/quizj.module#QuizjPageModule' },
+ 
+  { path: 'vad', loadChildren: './pages/informatica/android/vad/vad.module#VadPageModule' },
+  
+  { path: 'vjsc', loadChildren: './pages/informatica/javascript/vjsc/vjsc.module#VjscPageModule' },
+  { path: 'vhtml', loadChildren: './pages/informatica/html/vhtml/vhtml.module#VhtmlPageModule' },
+ 
+  { path: 'vgti', loadChildren: './pages/informatica/gestao/vgti/vgti.module#VgtiPageModule' },
+ 
+  { path: 'vitil', loadChildren: './pages/informatica/itil/vitil/vitil.module#VitilPageModule' },
+  
+  { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule' },
+
+
   
 
 ];
