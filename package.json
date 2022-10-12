@@ -44,7 +44,7 @@
     "core-js": "^2.6.10",
     "dom-to-image": "^2.6.0",
     "jquery": "^3.4.1",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.5.1",
     "pdfobject": "^2.1.1",
     "popper.js": "^1.16.0",
     "rxjs": "^6.5.3",
